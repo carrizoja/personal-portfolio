@@ -1,0 +1,67 @@
+header {
+    height: 100vh;
+    padding-top: 7rem;
+    overflow: hidden;
+}
+
+
+/* CSS for profile photo */
+
+.profilePhoto {
+    width: 22rem;
+    height: 30rem;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: absolute;
+    left: calc(50% - 11rem);
+    margin-top: 4rem;
+    overflow: hidden;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+}
+
+
+/* CSS for CTA */
+
+.cta {
+    margin-top: 2.5rem;
+    flex-direction: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.btnDownload {
+    margin-right: 2rem;
+}
+
+
+/* CSS for header Socials */
+
+.header__socials {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 3rem;
+}
+
+.header__socials::after {
+    content: "";
+    width: 1px;
+    height: 2rem;
+    background: var(--color-primary);
+}
+
+
+/* CSS for Scroll Down */
+
+.scroll__down {
+    position: absolute;
+    right: -0.8rem;
+    bottom: 5rem;
+    transform: rotate(90deg);
+    font-weight: 300;
+    font-size: 0.9rem;
+}
