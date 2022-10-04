@@ -5,6 +5,16 @@ header {
 }
 
 
+/* Set container to center horizontally */
+
+.container.header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* CSS for profile photo */
 
 .profilePhoto {
@@ -47,21 +57,24 @@ header {
     bottom: 3rem;
 }
 
-.header__socials::after {
-    content: "";
-    width: 1px;
-    height: 2rem;
-    background: var(--color-primary);
+
+/* Media Queries (Medium Devices) */
+
+@media screen and (max-width: 1024px) {
+    header {
+        height: 68vh;
+    }
 }
 
 
-/* CSS for Scroll Down */
+/* Media Queries for Mobile */
 
-.scroll__down {
-    position: absolute;
-    right: -0.8rem;
-    bottom: 5rem;
-    transform: rotate(90deg);
-    font-weight: 300;
-    font-size: 0.9rem;
+@media screen and (max-width: 768px) {
+    header {
+        height: 100vh;
+    }
+    .header__socials,
+    .scroll__down {
+        display: none;
+    }
 }
