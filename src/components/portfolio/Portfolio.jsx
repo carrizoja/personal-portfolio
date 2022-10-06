@@ -2,6 +2,7 @@ import React from 'react'
 import './portfolio.css'
 import { useState, useEffect } from 'react'
 import {getFirestore,collection, getDocs} from 'firebase/firestore' 
+import Spinner from 'react-bootstrap/Spinner'
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -21,13 +22,15 @@ const Portfolio = () => {
   }, []);
 
   
-
-
   return (
     <>
     {
       loading ? 
-      <h2 className='loading'>Loading...</h2>
+      (
+        <Spinner className='spinner' animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      )
       :
       <section id='portfolio'>
       <h5>My Projects</h5>
@@ -40,10 +43,10 @@ const Portfolio = () => {
             <div className='portfolio__item-image'>
               <img src={project.image} alt={project.title} /> 
             </div>
-            <h3 className='portfolio__item-title'>{project.title}</h3>
+            <h5 className='portfolio__item-title'>{project.title}</h5>
             <div className='portfolio__item-cta'>
-            <a href={project.github} className='btn' target='_blank' rel='noreferrer'><h4>Github</h4></a>
-            <a href={project.demo} className='btn btn-primary' target='_blank' rel='noreferrer'><h4>Live</h4></a>
+            <a href={project.github} className='btn' target='_blank' rel='noreferrer'><h5>Github</h5></a>
+            <a href={project.demo} className='btn btn-primary' target='_blank' rel='noreferrer'><h5>Live</h5></a>
             </div>   
           </article>
           )

@@ -1,5 +1,8 @@
-.loading {
-    text-align: center;
+/* Set Spinner at center */
+
+.spinner {
+    margin-top: 10px;
+    margin-left: 50%;
 }
 
 .portfolio__container {
@@ -27,7 +30,7 @@
 .portfolio__item-image {
     border-radius: 1.5rem;
     overflow: hidden;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .portfolio__item-title {

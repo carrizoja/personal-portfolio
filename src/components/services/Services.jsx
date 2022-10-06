@@ -5,40 +5,40 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 const Services = () => {
   return (
     <section id="services">
-      <h5>Services that I offer</h5>
+      <h5>Jobs that I can do</h5>
       <h2>Services</h2>
 
       <div className="container services__container">
         {/* Start Ux Ui */}
         <article className="service">
           <div className="service__head">
-            <h3>UI/UX Design</h3>
+            <h3>Web Development</h3>
           </div>
 
           <ul className="service__list">
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Landing Pages</p>
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Web Application / Business Software</p>
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>eCommerce</p>
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Blog Website Design</p>
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Web Site Maintenence</p>
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Domain / Hosting Management</p>
             </li>
           </ul>
         </article>
@@ -47,34 +47,27 @@ const Services = () => {
         {/* Start Web Development */}
         <article className="service">
           <div className="service__head">
-            <h3>Web Development</h3>
+            <h3>UX UI</h3>
           </div>
 
           <ul className="service__list">
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Wireframe and Prototyping</p>
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>User Research and Analysis</p>
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Design Thinking</p>
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Cart Sorting</p>
             </li>
-            <li>
-              <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </li>
-            <li>
-              <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </li>
+            
           </ul>
         </article>
         {/*  Web Development */}
@@ -82,34 +75,23 @@ const Services = () => {
         {/* Start Technnical Support */}
         <article className="service">
           <div className="service__head">
-            <h3>Web Development</h3>
+            <h3>Technnical Support</h3>
           </div>
 
           <ul className="service__list">
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Software and OS installation</p>
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Networking</p>
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p>Cybersecurity</p>
             </li>
-            <li>
-              <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </li>
-            <li>
-              <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </li>
-            <li>
-              <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </li>
+           
           </ul>
         </article>
         {/*  End Technnical Support */}
