@@ -73,3 +73,12 @@
         gap: 1rem;
     }
 }
+
+@media screen and (max-width: 375px) {
+    .btnGitHub {
+        width: 50px;
+    }
+    .btnLive {
+        width: 50px;
+    }
+}

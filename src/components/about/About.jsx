@@ -8,10 +8,14 @@ import { HiOutlineFolder } from "react-icons/hi";
 const About = () => {
   return (
     <section id="about">
+      
       <h5>Get to know</h5>
       <h2>About Me</h2>
+      
+     
 
       <div className="container about__container">
+
         <div className="about__me">
           <div className="about__me-image">
             <img src={computer} alt="About Me" />
@@ -39,8 +43,7 @@ const About = () => {
           </div>
 
           <p>
-            I am a Systems Engineer and Full Stack Developer. Currently, I am
-            focused on both the Front End and Back End fields due to the
+            I am a Systems Engineer and Full Stack Developer. Currently focused on both Front End and Back End fields due to the
             versatility and coexistence of both approaches. My main objective is
             to work as a Full Stack Developer.
           </p>
