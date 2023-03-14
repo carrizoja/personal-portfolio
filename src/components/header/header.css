@@ -70,11 +70,19 @@ header {
 
 @media screen and (max-width: 768px) {
     header {
-        height: 100vh;
+        height: 80vh;
     }
     .header__socials,
     .scroll__down {
         display: none;
+    }
+
+    .profilePhoto {
+        width: 18rem;
+        height: 26rem;   
+        margin-right: 10px;
+        padding-bottom: 4rem;
+        left: calc(50% - 9rem);
     }
 }
 
@@ -91,4 +99,12 @@ header {
     .btnDownload {
         margin: 0 auto;
     }
+
+}
+
+@media screen and (max-width: 376px) {
+ header {
+    height: 100vh;
+ }
+
 }

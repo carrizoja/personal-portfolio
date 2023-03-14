@@ -71,7 +71,7 @@ const Services = () => {
             </li>
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
-              <p>Cart Sorting</p>
+              <p>Card Sorting</p>
             </li>
             
           </ul>
