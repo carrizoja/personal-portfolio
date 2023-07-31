@@ -29,7 +29,7 @@
 
 .portfolio__item-image {
     border-radius: 1.5rem;
-    overflow: hidden;
+   overflow: hidden;
     padding-bottom: 20px;
 }
 
@@ -45,6 +45,14 @@
 .portfolio__item-cta {
     display: flex;
     flex-direction: row;
+}
+
+.title_designProject {
+    margin-top: 3rem;
+}
+.portfolio__item-description {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 

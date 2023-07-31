@@ -1,124 +1,97 @@
 import React from "react";
 import "./experience.css";
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import { useState, useEffect } from 'react'
+import { getFirestore, collection, getDocs } from 'firebase/firestore'
+import Spinner from 'react-bootstrap/Spinner'
 
 const Experience = () => {
-  return (
-    <section id="experience">
-      <h5>My Skills</h5>
-      <h2>Experience</h2>
 
-      <div className="container experience__container">
-        <div className="experience__frontend">
-          <h3>Frontend Development</h3>
-          <div className="experience__content">
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>HTML</h4>
-                <small className="text-light">Experienced</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>CSS</h4>
-                <small className="text-light">Experienced</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>Javascript</h4>
-                <small className="text-light">Intermediate</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>Bootstrap</h4>
-                <small className="text-light">Experienced</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>React</h4>
-                <small className="text-light">Intermediate</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>SASS</h4>
-                <small className="text-light">Experienced</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>jQuery</h4>
-                <small className="text-light">Basic</small>
-              </div>
-            </article>
+  const [experienceFE, setExperienceFE] = useState([]);
+  const [experienceBE, setExperienceBE] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // get fetch projects from firebase
+    const db = getFirestore();
+    const itemsCollection = collection(db, "frontEndSkills");
+    const itemsCollection2 = collection(db, "backEndSkills")
+    getDocs(itemsCollection).then((querySnapshot) => {
+      if (querySnapshot.empty) {
+        console.log('No matching documents.');
+      }
+      setExperienceFE(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setLoading(false);
+    });
+    getDocs(itemsCollection2).then((querySnapshot) => {
+      if (querySnapshot.empty) {
+        console.log('No matching documents.');
+      }
+      setExperienceBE(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setLoading(false);
+    }
+    );
+  }, []);
+
+  return (
+    <>
+      <section id="experience">
+        <h5>My Skills</h5>
+        <h2>Experience</h2>
+        <div className="container experience__container">
+          <div className="experience__frontend">
+            <h3>Frontend Development</h3>
+            <div className="experience__content">
+              {
+                loading ?
+                  (
+                    <Spinner className='spinner' animation="border" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                  ) :
+                  experienceFE.map((skill) => {
+                    return (
+                      <article key={skill.id} className="experience__details">
+                        <BsFillCheckCircleFill className="experience__details-icon" />
+                        <div>
+                          <h4>{skill.name}</h4>
+                          <small className="text-light">{skill.experience}</small>
+                        </div>
+                      </article>
+                    )
+                  })
+
+              }
+            </div>
+          </div>
+          <div className="experience__backend">
+            <h3>Backend Development</h3>
+            <div className="experience__content">
+              {
+                loading ? (
+                  <Spinner className='spinner' animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                ) :
+                  experienceBE.map((skill) => {
+                    return (
+                      <article key={skill.id} className="experience__details">
+                        <BsFillCheckCircleFill className="experience__details-icon" />
+                        <div>
+                          <h4>{skill.name}</h4>
+                          <small className="text-light">{skill.experience}</small>
+                        </div>
+                      </article>
+                    )
+                  })
+              }
+            </div>
           </div>
         </div>
-        <div className="experience__backend">
-          <h3>Backend Development</h3>
-          <div className="experience__content">
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>Node Js</h4>
-                <small className="text-light">Intermediate</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>C#</h4>
-                <small className="text-light">Experienced</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>Mongo DB</h4>
-                <small className="text-light">Intermediate</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>Microsoft SQL</h4>
-                <small className="text-light">Experienced</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>MySQL</h4>
-                <small className="text-light">Intermediate</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>Firebase</h4>
-                <small className="text-light">Intermediate</small>
-              </div>
-            </article>
-            <article className="experience__details">
-              <BsFillCheckCircleFill className="experience__details-icon" />
-              <div>
-                <h4>Express Js</h4>
-                <small className="text-light">Intermediate</small>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
+
+      </section>
+    </>
+
   );
 };
 

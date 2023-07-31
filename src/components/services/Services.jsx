@@ -5,9 +5,6 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 
 const Services = () => {
 
- 
-
-
   return (
     
     <section id="services">
@@ -20,7 +17,6 @@ const Services = () => {
           <div className="service__head">
             <h3>Web Development</h3>
           </div>
-
           <ul className="service__list">
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
@@ -46,6 +42,10 @@ const Services = () => {
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
               <p>Domain / Hosting Management</p>
             </li>
+            <li>
+              <IoMdCheckmarkCircleOutline className="service__list-icon" />
+              <p>APIs</p>
+            </li>
           </ul>
         </article>
         {/*  End of UX UI */}
@@ -55,7 +55,6 @@ const Services = () => {
           <div className="service__head">
             <h3>UX UI</h3>
           </div>
-
           <ul className="service__list">
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
@@ -72,6 +71,10 @@ const Services = () => {
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
               <p>Card Sorting</p>
+            </li>
+            <li>
+              <IoMdCheckmarkCircleOutline className="service__list-icon" />
+              <p>Tree Testing</p>
             </li>
             
           </ul>

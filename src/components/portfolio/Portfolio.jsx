@@ -6,12 +6,14 @@ import Spinner from 'react-bootstrap/Spinner'
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
+  const [designProjects, setDesignProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // get fetch projects from firebase
     const db = getFirestore();
     const itemsCollection = collection(db, "Projects");
+    const itemsCollection2 = collection(db, "DesignProjects")
     getDocs(itemsCollection).then((querySnapshot) => {
       if (querySnapshot.empty) {
         console.log('No matching documents.');
@@ -19,6 +21,14 @@ const Portfolio = () => {
       setProjects(querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
       setLoading(false);
     });
+    getDocs(itemsCollection2).then((querySnapshot) => {
+      if (querySnapshot.empty) {
+        console.log('No matching documents.');
+      }
+      setDesignProjects(querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
+      setLoading(false);
+    }
+    );
   }, []);
 
   
@@ -33,9 +43,8 @@ const Portfolio = () => {
       )
       :
       <section id='portfolio'>
-      <h5>My Projects</h5>
+      <h5>My Dev's Projects</h5>
       <h2>Portfolio</h2>
-
       <div className='container portfolio__container'>
         {projects.map((project )=> {
           return(
@@ -53,7 +62,23 @@ const Portfolio = () => {
         })
       }
       </div>
-    </section>
+      <h5 className='title_designProject'>My Design's Projects</h5>
+      <h2>Portfolio</h2>
+      <div className='container portfolio__container'>
+        {designProjects.map((designProject )=> (
+          <article key={designProject.id} className='portfolio__item'>
+            <div className='portfolio__item-image'>
+              <img src={designProject.image} alt={designProject.name} />
+            </div>
+            <h5 className='portfolio__item-title'>{designProject.name}</h5>
+            <h6 className='portfolio__item-description'>{designProject.description}</h6>
+            <div className='portfolio__item-cta'>
+            <a href={designProject.link} className='btn btnGitHub' target='_blank' rel='noreferrer'>Visit it!</a></div>
+          </article>
+        ))
+      }
+      </div>
+    </section>   
       
     }
     </>
