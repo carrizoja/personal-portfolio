@@ -15,7 +15,7 @@ export default function DropdownTW() {
     <Menu as="div" className="menuDropdown relative inline-block text-left hover:bg-gray-50">
       <div>
         <Menu.Button className="menuDropdown inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-          Download Resume
+          Resume
           <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
         </Menu.Button>
       </div>

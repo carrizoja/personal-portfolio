@@ -33,8 +33,8 @@ const Contact = () => {
           <article className="contact__option">
             <RiMessengerLine className="contact__option-icon" />
             <h4>Facebook Messenger</h4>
-            <h5>iJac IT Solutions</h5>
-            <a href="https://m.me/ijacsolucionesinformaticas" target='_blank' rel="noreferrer">Send me a message</a>
+            <h5>José Carrizo</h5>
+            <a href="https://m.me/carrizoja" target='_blank' rel="noreferrer">Send me a message</a>
           </article>
           <article className="contact__option">
             <IoLogoWhatsapp className="contact__option-icon"/>
