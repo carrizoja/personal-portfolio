@@ -8,8 +8,7 @@ import {FaGithub} from 'react-icons/fa'
 const Footer = () => {
   return (
     <footer>
-      <a href="#home" className='footer__logo'>Jose</a>
-
+      <img className='logo' src='https://res.cloudinary.com/ijac-it-solutions/image/upload/v1695350848/img/jc_logo_wermwm.png' alt='logo'></img>
       <ul className='permalinks'>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>

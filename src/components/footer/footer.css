@@ -17,6 +17,15 @@ footer a {
     display: inline-block;
 }
 
+.logo {
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
 .permalinks {
     display: flex;
     flex-wrap: wrap;
