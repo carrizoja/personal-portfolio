@@ -7,6 +7,7 @@ import Spinner from 'react-bootstrap/Spinner'
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
   const [designProjects, setDesignProjects] = useState([]);
+  const [customerProjects, setCustomerProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,6 +15,7 @@ const Portfolio = () => {
     const db = getFirestore();
     const itemsCollection = collection(db, "Projects");
     const itemsCollection2 = collection(db, "DesignProjects")
+    const itemsCollection3= collection (db,"customerProjects" )
     getDocs(itemsCollection).then((querySnapshot) => {
       if (querySnapshot.empty) {
         console.log('No matching documents.');
@@ -26,6 +28,14 @@ const Portfolio = () => {
         console.log('No matching documents.');
       }
       setDesignProjects(querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
+      setLoading(false);
+    }
+    );
+    getDocs(itemsCollection3).then((querySnapshot) => {
+      if (querySnapshot.empty) {
+        console.log('No matching documents.');
+      }
+      setCustomerProjects(querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data()})));
       setLoading(false);
     }
     );
@@ -43,7 +53,25 @@ const Portfolio = () => {
       )
       :
       <section id='portfolio'>
-      <h5>My Dev's Projects</h5>
+      <h5>My Customer Projects</h5>
+      <h2>Portfolio</h2>
+      <div className='container portfolio__container'>
+        {customerProjects.map((customerProject )=> {
+          return(
+            <article key={customerProject.id} className='portfolio__item'>
+            <div className='portfolio__item-image'>
+              <img src={customerProject.image} alt={customerProject.title} /> 
+            </div>
+            <h5 className='portfolio__item-title'>{customerProject.title}</h5>
+            <div className='portfolio__item-cta'>
+            <a href={customerProject.link} className='btn  btnLive' target='_blank' rel='noreferrer'>Website</a>
+            </div>   
+          </article>
+          )
+        })
+      }
+      </div>
+      <h5 className='title_designProject'>My Dev Projects</h5>
       <h2>Portfolio</h2>
       <div className='container portfolio__container'>
         {projects.map((project )=> {
@@ -62,7 +90,7 @@ const Portfolio = () => {
         })
       }
       </div>
-      <h5 className='title_designProject'>My Design's Projects</h5>
+      <h5 className='title_designProject'>My Design Projects</h5>
       <h2>Portfolio</h2>
       <div className='container portfolio__container'>
         {designProjects.map((designProject )=> (

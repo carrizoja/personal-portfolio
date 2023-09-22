@@ -1,11 +1,11 @@
 import React from 'react'
-import CV from '../../assets/CV5.pdf'
 import './header.css'
+import DropdownTW from '../dropdownTW/DropdownTW'
 
 const CTA = () => {
   return (
     <div className='cta'>
-        <a href={CV} download className='btn btnDownload'>Download CV</a>
+        <DropdownTW/>
         <a href='#contact' className='btn btn-primary btnContactMe'>Contact me</a>
     </div>
   )
