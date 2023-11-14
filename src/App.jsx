@@ -10,6 +10,11 @@ import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
 
 const App = () => {
+
+  /* add use effect function to go to top when refreth page */
+  React.useEffect(() => {
+    window.history.scrollRestoration = 'manual'
+  }, [])
   return (
     <>
     <Header />
