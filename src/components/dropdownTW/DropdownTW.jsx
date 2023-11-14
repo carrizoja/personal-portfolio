@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import CV from '../../assets/CV5.pdf'
+import CV from '../../assets/CV6.pdf'
 import resume from '../../assets/resume.pdf'
 import './dropdownTW.css'
 
