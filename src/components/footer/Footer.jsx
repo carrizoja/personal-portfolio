@@ -20,7 +20,6 @@ const Footer = () => {
       </ul>
 
       <div className='footer__socials'>
-        <a href="https://www.facebook.com/carrizoja" target='_blank' rel='noreferrer'><FaFacebook/></a>
         <a href="https://www.instagram.com/carrizo.jose/" target='_blank' rel='noreferrer'><GrInstagram/></a>
         <a href="https://www.linkedin.com/in/jose-carrizo-dev/" target='_blank' rel='noreferrer'><BsLinkedin/></a>
         <a href="https://github.com/carrizoja/carrizoja" target='_blank' rel='noreferrer'><FaGithub/></a>
