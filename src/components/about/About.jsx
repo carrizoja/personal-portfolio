@@ -28,17 +28,17 @@ const About = () => {
             <article className="about__card">
               <RiAwardFill className="about__icon" />
               <h5>Experience</h5>
-              <small>2+ Years Working</small>
+              <small>4+ Years Working</small>
             </article>
             <article className="about__card">
               <FaUsers className="about__icon" />
               <h5>Clients</h5>
-              <small>10+ Worlwide</small>
+              <small>15+ Worlwide</small>
             </article>
             <article className="about__card">
               <HiOutlineFolder className="about__icon" />
               <h5>Projects</h5>
-              <small>10+ finished</small>
+              <small>20+ finished</small>
             </article>
           </div>
 
