@@ -84,7 +84,7 @@ const Services = () => {
         {/* Start Technnical Support */}
         <article className="service">
           <div className="service__head">
-            <h3>Technnical Support</h3>
+            <h3>Other Services</h3>
           </div>
 
           <ul className="service__list">
@@ -99,6 +99,18 @@ const Services = () => {
             <li>
               <IoMdCheckmarkCircleOutline className="service__list-icon" />
               <p>Cybersecurity</p>
+            </li>
+            <li>
+              <IoMdCheckmarkCircleOutline className="service__list-icon" />
+              <p>AWS</p>
+            </li>
+            <li>
+              <IoMdCheckmarkCircleOutline className="service__list-icon" />
+              <p>Data Science</p>
+            </li>
+            <li>
+              <IoMdCheckmarkCircleOutline className="service__list-icon" />
+              <p>Scrum Master</p>
             </li>
            
           </ul>
