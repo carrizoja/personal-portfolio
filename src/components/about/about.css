@@ -4,6 +4,10 @@
     gap: 15%;
 }
 
+.aboutId {
+    margin-top: 2rem;
+}
+
 .about__me {
     width: 100%;
     aspect-ratio: 1/1;
@@ -99,4 +103,7 @@
     .about__content {
         margin: 1.5rem 0;
     }
+    .aboutId {
+    margin-top: 3rem;
+}
 }

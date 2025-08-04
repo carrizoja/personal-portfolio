@@ -6,8 +6,8 @@ import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 const Services = () => {
 
   return (
-    
-    <section id="services">
+
+    <section className="servicesId" id="services">
       <h5>Jobs that I can do</h5>
       <h2>Services</h2>
 

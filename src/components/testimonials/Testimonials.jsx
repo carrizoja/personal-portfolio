@@ -43,7 +43,7 @@ const Testimonials = () => {
       :
 
 
-    <section id="testimonials">
+    <section className="testimonialsId" id="testimonials">
       <h5>What my clients say of me</h5>
       <h2>Testimonials</h2>
 

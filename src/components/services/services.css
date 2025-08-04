@@ -4,6 +4,10 @@
     gap: 3rem;
 }
 
+.servicesId {
+    margin-top: 2rem;
+}
+
 .service {
     background: var(--color-bg-variant);
     border-radius: 2rem 2rem 2rem 2rem;
@@ -71,4 +75,7 @@
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
+   .servicesId {
+    margin-top: 3rem;
+}
 }

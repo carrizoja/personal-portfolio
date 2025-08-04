@@ -52,7 +52,7 @@ const Portfolio = () => {
         </Spinner>
       )
       :
-      <section id='portfolio'>
+      <section className='portfolioId' id='portfolio'>
       <h5>My Customer Projects</h5>
       <h2>Portfolio</h2>
       <div className='container portfolio__container'>

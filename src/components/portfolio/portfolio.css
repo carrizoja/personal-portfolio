@@ -11,6 +11,10 @@
     gap: 2.5rem;
 }
 
+.portfolioId {
+    margin-top: 3rem;
+}
+
 .portfolio__item {
     background: var(--color-bg-variant);
     padding: 1.3rem;
