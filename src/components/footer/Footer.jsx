@@ -1,6 +1,5 @@
 import React from 'react'
 import './footer.css'
-import {FaFacebook} from 'react-icons/fa'
 import {GrInstagram} from 'react-icons/gr'
 import {BsLinkedin} from 'react-icons/bs'
 import {FaGithub} from 'react-icons/fa'

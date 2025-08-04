@@ -9,13 +9,17 @@ const Experience = () => {
 
   const [experienceFE, setExperienceFE] = useState([]);
   const [experienceBE, setExperienceBE] = useState([]);
+  const [experienceLanguages, setExperienceLanguages] = useState([]);
+  const [experienceOtherSkills, setExperienceOtherSkills] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // get fetch projects from firebase
     const db = getFirestore();
     const itemsCollection = collection(db, "frontEndSkills");
-    const itemsCollection2 = collection(db, "backEndSkills")
+    const itemsCollection2 = collection(db, "backEndSkills");
+    const itemsCollection3 = collection(db, "languages");
+    const itemsCollection4 = collection(db, "otherSkills");
     getDocs(itemsCollection).then((querySnapshot) => {
       if (querySnapshot.empty) {
         console.log('No matching documents.');
@@ -31,6 +35,20 @@ const Experience = () => {
       setLoading(false);
     }
     );
+    getDocs(itemsCollection3).then((querySnapshot) => {
+      if (querySnapshot.empty) {
+        console.log('No matching documents.');
+      }
+      setExperienceLanguages(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setLoading(false);
+    });
+    getDocs(itemsCollection4).then((querySnapshot) => {
+      if (querySnapshot.empty) {
+        console.log('No matching documents.');
+      }
+      setExperienceOtherSkills(querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setLoading(false);
+    });
   }, []);
 
   return (
@@ -74,6 +92,52 @@ const Experience = () => {
                   </Spinner>
                 ) :
                   experienceBE.map((skill) => {
+                    return (
+                      <article key={skill.id} className="experience__details">
+                        <BsFillCheckCircleFill className="experience__details-icon" />
+                        <div>
+                          <h4>{skill.name}</h4>
+                          <small className="text-light">{skill.experience}</small>
+                        </div>
+                      </article>
+                    )
+                  })
+              }
+            </div>
+          </div>
+          <div className="experience__languages">
+            <h3>Language Skills</h3>
+            <div className="experience__content">
+              {
+                loading ? (
+                  <Spinner className='spinner' animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                ) :
+                  experienceLanguages.map((skill) => {
+                    return (
+                      <article key={skill.id} className="experience__details">
+                        <BsFillCheckCircleFill className="experience__details-icon" />
+                        <div>
+                          <h4>{skill.name}</h4>
+                          <small className="text-light">{skill.experience}</small>
+                        </div>
+                      </article>
+                    )
+                  })
+              }
+            </div>
+          </div>
+          <div className="experience__other-skills">
+            <h3>Other Skills</h3>
+            <div className="experience__content">
+              {
+                loading ? (
+                  <Spinner className='spinner' animation="border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </Spinner>
+                ) :
+                  experienceOtherSkills.map((skill) => {
                     return (
                       <article key={skill.id} className="experience__details">
                         <BsFillCheckCircleFill className="experience__details-icon" />
